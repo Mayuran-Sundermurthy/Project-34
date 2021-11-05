@@ -7,6 +7,7 @@ const Body = Matter.Body;
 //declaring the variables
 var player, playertest;
 var floor1, floor2, floor3;
+var isMoving = false;
 
 function setup() {
   //setting the canvas size
@@ -16,8 +17,6 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   
- 
-
   //creating the floor objects
   floor1 = new Floor(375,height/2 + 150,750,25);
   floor2 = new Floor(width-200,height/2,150,25);
@@ -49,10 +48,16 @@ function draw()
 
   if(keyIsDown(LEFT_ARROW)){
     player.body.position.x -= 0.5;
+    isMoving = true;
   }
 
   if(keyIsDown(RIGHT_ARROW)){
     player.body.position.x += 0.5;
+    isMoving = true;
+  }
+
+  if(keyIsDown("space")){
+    player.body.position.y -= 1;
   }
 }
 
