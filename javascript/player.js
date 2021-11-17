@@ -5,9 +5,9 @@ class Player{
         //width and height
         this.w = w;
         this.h = h;
-      
+
         //creating the body
-        this.body = Bodies.rectangle(x,y,this.w,this.h);
+        this.body = Bodies.rectangle(x,y,this.w,this.h,this.options);
         //adding the body to the world
         World.add(world,this.body);
     }

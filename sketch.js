@@ -29,35 +29,24 @@ function setup() {
 }
 
 
-function draw() 
-{
-  
+function draw(){
   //setting the background color
   background(51);
   //continuously updating the engine
   Engine.update(engine);
-  
   //displaying the objects
   
   floor1.display();
   floor2.display();
   floor3.display();
   player.display();
-  
-  //player controls
 
   if(keyIsDown(LEFT_ARROW)){
-    player.body.position.x -= 0.5;
-    isMoving = true;
+    player.body.position.x -=0.5;
   }
 
   if(keyIsDown(RIGHT_ARROW)){
     player.body.position.x += 0.5;
-    isMoving = true;
-  }
-
-  if(keyIsDown("space")){
-    player.body.position.y -= 1;
   }
 }
 
